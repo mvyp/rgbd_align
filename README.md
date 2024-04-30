@@ -1,1 +1,5 @@
-# rgbd_align
+# rgbd_gazebo
+
+```sh
+roslaunch rgbd_gazebo demo.launch
+```

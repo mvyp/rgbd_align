@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.0.2)
+project(rgbd_gazebo)
+
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+)
+
+catkin_package(
+  INCLUDE_DIRS
+  LIBRARIES
+  CATKIN_DEPENDS 
+  roscpp
+)

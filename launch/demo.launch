@@ -1,0 +1,57 @@
+<launch>
+    <arg name="paused" default="false"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="true"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/>
+
+    <param name="use_sim_time" value="$(arg use_sim_time)"/>
+    <param name="shoe_description" command="$(find xacro)/xacro --inorder '$(find rgbd_gazebo)/urdf/google_scan/shoe.xacro'" />
+    <param name="bowl_description" command="$(find xacro)/xacro --inorder '$(find rgbd_gazebo)/urdf/google_scan/bowl.xacro'" />
+    <param name="rgbd_description" command="$(find xacro)/xacro --inorder '$(find rgbd_gazebo)/urdf/realsense/d435_gazebo.xacro'" />
+    
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find rgbd_gazebo)/worlds/rgbd.world"/>
+        <arg name="debug" value="$(arg debug)" />
+        <arg name="gui" value="$(arg gui)" />
+        <arg name="paused" value="$(arg paused)"/>
+        <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+        <arg name="headless" value="$(arg headless)"/>
+    </include>
+
+    <node name="shoe_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="
+    -urdf 
+    -model shoe 
+    -param shoe_description 
+    -x -1.5 
+    -y 0.15
+    -z 0.0 
+    -R 0.0
+    -P 0.0
+    -Y 3.14"/>
+
+    <node name="bowl_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="
+    -urdf 
+    -model bowl 
+    -param bowl_description 
+    -x -1.5 
+    -y -0.15
+    -z 0.0 
+    -R 0.0
+    -P 0.0
+    -Y 0.0"/>
+
+    <node name="rgbd_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="
+    -urdf 
+    -model rgbd 
+    -param rgbd_description "/>
+
+    <node name="rgbd_tf_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+        <param name="use_tf_static" value="true"/>
+        <param name="publish_frequency" value="50"/>
+        <param name="ignore_timestamp" value="true"/>
+        <remap from="robot_description" to="rgbd_description"/>
+    </node>
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rgbd_gazebo)/rviz/rgbd_gazebo.rviz" />
+</launch>

@@ -1,0 +1,25 @@
+<robot name="bowl">
+  <link name="bowl">
+    <inertial>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <mass value="1" />
+    <inertia ixx="1" ixy="0"  ixz="0" iyy="1" iyz="0" izz="1" />
+    </inertial>
+    <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <mesh filename="package://rgbd_gazebo/meshes/Cole_Hardware_Bowl_Scirocco_YellowBlue/meshes/model.obj" scale="1.0 1.0 1.0"/>
+    </geometry>
+    <material name="table_material">
+    <color rgba="0.5999999999999999778 0.5999999999999999778 0.5999999999999999778 1.0"/>
+    </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://rgbd_gazebo/meshes/Cole_Hardware_Bowl_Scirocco_YellowBlue/meshes/model.obj" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>
