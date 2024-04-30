@@ -3,7 +3,7 @@
   <xacro:arg name="use_nominal_extrinsics" default="false"/>
   <xacro:arg name="add_plug" default="false" />
   <xacro:arg name="use_mesh" default="true" />
-  <xacro:include filename="$(find rgbd_gazebo)/urdf/realsense/_d435.urdf.xacro" />
+  <xacro:include filename="$(find rgbd_align)/urdf/realsense/_d435.urdf.xacro" />
   
   <link name="base_link" />
   <xacro:sensor_d435 parent="base_link" use_nominal_extrinsics="$(arg use_nominal_extrinsics)" add_plug="$(arg add_plug)" use_mesh="$(arg use_mesh)">

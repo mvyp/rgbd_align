@@ -6,12 +6,12 @@
     <arg name="debug" default="false"/>
 
     <param name="use_sim_time" value="$(arg use_sim_time)"/>
-    <param name="shoe_description" command="$(find xacro)/xacro --inorder '$(find rgbd_gazebo)/urdf/google_scan/shoe.xacro'" />
-    <param name="bowl_description" command="$(find xacro)/xacro --inorder '$(find rgbd_gazebo)/urdf/google_scan/bowl.xacro'" />
-    <param name="rgbd_description" command="$(find xacro)/xacro --inorder '$(find rgbd_gazebo)/urdf/realsense/d435_gazebo.xacro'" />
+    <param name="shoe_description" command="$(find xacro)/xacro --inorder '$(find rgbd_align)/urdf/google_scan/shoe.xacro'" />
+    <param name="bowl_description" command="$(find xacro)/xacro --inorder '$(find rgbd_align)/urdf/google_scan/bowl.xacro'" />
+    <param name="rgbd_description" command="$(find xacro)/xacro --inorder '$(find rgbd_align)/urdf/realsense/d435_gazebo.xacro'" />
     
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
-        <arg name="world_name" value="$(find rgbd_gazebo)/worlds/rgbd.world"/>
+        <arg name="world_name" value="$(find rgbd_align)/worlds/rgbd.world"/>
         <arg name="debug" value="$(arg debug)" />
         <arg name="gui" value="$(arg gui)" />
         <arg name="paused" value="$(arg paused)"/>
@@ -53,5 +53,5 @@
         <remap from="robot_description" to="rgbd_description"/>
     </node>
 
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rgbd_gazebo)/rviz/rgbd_gazebo.rviz" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rgbd_align)/rviz/rgbd_align.rviz" />
 </launch>

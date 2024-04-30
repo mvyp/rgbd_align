@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>rgbd_gazebo</name>
+  <name>rgbd_align</name>
   <version>0.0.0</version>
-  <description>The rgbd_gazebo package</description>
+  <description>The rgbd_align package</description>
   <maintainer email="hanzx@u.northwestern.edu">Zhengxiao Han</maintainer>
   <license>TODO</license>
 
