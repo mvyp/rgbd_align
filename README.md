@@ -10,7 +10,7 @@
 * *[depth_yolo](https://https://github.com/0nhc/depth_yolo) uses a Kinect V2 RGB-D camera, which is too old. Most people don't use such cameras nowadays.*
 * *[depth_yolo](https://https://github.com/0nhc/depth_yolo) uses [darknet_ros](https://github.com/leggedrobotics/darknet_ros) which is based on YOLOv3. It's 2024 now, and there are so many advanced object detection algorithms released.*
 
-*I deveopled [depth_yolo](https://https://github.com/0nhc/depth_yolo) when I was a sophomore, originally intended to achieve a central point grasping demo. But frankly speaking central point grasping method is out of time (both in performace and novelty). If you are also trying to achive central point grasping, I'd recommend you to know more about advanced grasping algorithms such as [anygrasp(graspnet)](https://graspnet.net/anygrasp.html).*
+*I deveopled [depth_yolo](https://https://github.com/0nhc/depth_yolo) when I was a sophomore, originally intended to achieve a central point grasping demo. But frankly speaking central point grasping method is out of time (both in performace and novelty). If you are also trying to achive central point grasping, I'd recommend you to use advanced grasping algorithms such as [anygrasp(graspnet)](https://graspnet.net/anygrasp.html).*
 
 ## Roadmap
 * Get rid of hardware dependency. Give a demo in Gazebo so that everyone can try it.
