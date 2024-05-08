@@ -6,9 +6,9 @@
     <arg name="debug" default="false"/>
 
     <param name="use_sim_time" value="$(arg use_sim_time)"/>
-    <param name="shoe_description" command="$(find xacro)/xacro --inorder '$(find rgbd_align)/urdf/google_scan/shoe.xacro'" />
-    <param name="bowl_description" command="$(find xacro)/xacro --inorder '$(find rgbd_align)/urdf/google_scan/bowl.xacro'" />
-    <param name="rgbd_description" command="$(find xacro)/xacro --inorder '$(find rgbd_align)/urdf/realsense/d435_gazebo.xacro'" />
+    <param name="shoe_description" command="$(find xacro)/xacro '$(find rgbd_align)/urdf/google_scan/shoe.xacro'" />
+    <param name="bowl_description" command="$(find xacro)/xacro '$(find rgbd_align)/urdf/google_scan/bowl.xacro'" />
+    <param name="rgbd_description" command="$(find xacro)/xacro '$(find rgbd_align)/urdf/realsense/d435_gazebo.xacro'" />
     
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="world_name" value="$(find rgbd_align)/worlds/rgbd.world"/>
@@ -41,7 +41,7 @@
     -P 0.0
     -Y 0.0"/>
 
-    <node name="rgbd_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="
+    <node name="camera_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="
     -urdf 
     -model rgbd 
     -param rgbd_description "/>

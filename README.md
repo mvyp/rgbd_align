@@ -22,5 +22,5 @@ TODO
 ## Examples
 
 ```sh
-roslaunch rgbd_align demo.launch
+roslaunch rgbd_align gazebo.launch
 ```
