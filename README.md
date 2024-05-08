@@ -1,7 +1,9 @@
 # rgbd_align
-[![ROS1 VERSION](https://img.shields.io/badge/ROS-ROS%201%20Noetic-brightgreen)](http://wiki.ros.org/noetic)
+[![ROS1 VERSION](https://img.shields.io/badge/ROS-Noetic-reg)](http://wiki.ros.org/noetic)
 &nbsp;
-[![Ubuntu VERSION](https://img.shields.io/badge/Tested-Ubuntu%2020.04-green)](https://ubuntu.com/)
+[![Ubuntu VERSION](https://img.shields.io/badge/Ubuntu-20.04-green)](https://ubuntu.com/)
+&nbsp;
+[![Author](https://img.shields.io/badge/Space-Burger-blue)](https://hzx.blue/)
 &nbsp;
 
 *This package is an improved version of my previous work [depth_yolo](https://https://github.com/0nhc/depth_yolo). There were several problems reported by some guys who used [depth_yolo](https://https://github.com/0nhc/depth_yolo):*
